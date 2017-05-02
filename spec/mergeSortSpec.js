@@ -1,7 +1,8 @@
 describe("mergeSort", function() {
   // shallow comparator of arrays
-  const arrComparator = require("../lib/arrComparator");
+  const ArrHelper = require("../lib/ArrHelper");
   const mergeSort = require("../lib/mergeSort");
+  const comparator = ArrHelper.comparator;
 
   const arr1 = mergeSort([]);
   const sol1 = [];
@@ -11,12 +12,12 @@ describe("mergeSort", function() {
   const sol3 = [-82, -29, 0, 0, 4, 23, 900];
 
   it("handles trivial cases", function() {
-    expect(arrComparator(arr1, sol1)).toBeTruthy();
-    expect(arrComparator(arr2, sol2)).toBeTruthy();
+    expect(comparator(arr1, sol1)).toBeTruthy();
+    expect(comparator(arr2, sol2)).toBeTruthy();
   });
 
   it("handles more involved cases", function() {
-    expect(arrComparator(arr3, sol3)).toBeTruthy();
+    expect(comparator(arr3, sol3)).toBeTruthy();
   });
 
 });
