@@ -1,6 +1,6 @@
 describe("mergeSort", function() {
   // shallow comparator of arrays
-  const ArrHelper = require("../lib/ArrHelper");
+  const ArrHelper = require("../helpers/ArrHelper");
   const comparator = ArrHelper.comparator;
   const mergeSort = require("../lib/mergeSort");
 

@@ -1,6 +1,6 @@
 describe("quickSort", function() {
   // shallow comparator of arrays
-  const ArrHelper = require("../lib/ArrHelper");
+  const ArrHelper = require("../helpers/ArrHelper");
   const comparator = ArrHelper.comparator;
   const quickSort = require("../lib/quickSort");
 
