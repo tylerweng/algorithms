@@ -1,14 +1,14 @@
-describe("mergeSort", function() {
+describe("quickSort", function() {
   // shallow comparator of arrays
   const ArrHelper = require("../lib/ArrHelper");
   const comparator = ArrHelper.comparator;
-  const mergeSort = require("../lib/mergeSort");
+  const quickSort = require("../lib/quickSort");
 
-  const arr1 = mergeSort([]);
+  const arr1 = quickSort([]);
   const sol1 = [];
-  const arr2 = mergeSort([-9]);
+  const arr2 = quickSort([-9]);
   const sol2 = [-9];
-  const arr3 = mergeSort([-29, 900, -82, 0, 0, 23, 4]);
+  const arr3 = quickSort([-29, 900, -82, 0, 0, 23, 4]);
   const sol3 = [-82, -29, 0, 0, 4, 23, 900];
 
   it("handles trivial cases", function() {
