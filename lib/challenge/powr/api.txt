@@ -1,0 +1,19 @@
+Due to the added constraint of only tracking a hit as being from
+a distinct IP address once every 10 days, the simplest way to implement
+the POWr Hit Counter would be to store key-value pairs in a database
+where the key is the IP address and the value is a stack of the timestamps
+created when the user visited the site. A timestamp would be added to
+the stack if and only if the stack is empty or it is greater than 10
+days after the timestamp at the top of stack. This would allow us to
+track the number of hits by iterating through the keys in our database
+and returning the sum of our stacks' lengths.
+
+If we were to create this counter on a high traffic site, one way we
+could optimize our space is instead of storing key-value pairs for all
+possible IP address, we kept track of a count of total visitors and
+a database (as described above) that only keeps track of visitors from
+the last 10 days. Since the only constraint upon unique hits is to store
+a hit from a user once per 10 days, we would use that database to check
+against the user. If that user's IP address exists in our database, it
+means they have visited our site within the last 10 days, so we don't
+update our database and we don't increment our count, else we do.
