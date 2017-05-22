@@ -14,5 +14,5 @@ var reverseInt = function(x) {
         reversed = reversed * 10 + tail;
         x = Math.floor(x / 10);
     }
-    return isNeg ? - reversed : reversed;
+    return isNeg ? -reversed : reversed;
 };
