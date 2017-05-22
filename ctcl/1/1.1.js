@@ -2,7 +2,7 @@
 // characters. What if you can not use additional data structures?
 
 const allUnique = str => {
-  const chars = {};
+  const chars = new Set();
   for (let i = 0; i < str.length; i++) {
     if (chars.has(stri[i])) return false;
     chars.add(str[i]);
