@@ -31,3 +31,5 @@ node.right.left = new BTNode(10);
 node.left = new BTNode(12);
 node.left.left = new BTNode(13);
 node.left.left.right = new BTNode(14);
+
+traverseRight(node) // [5, 6, 8, 14]
