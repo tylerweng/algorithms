@@ -19,6 +19,9 @@ process.stdin.on("end", function () {
             prices[i] = parseFloat(price);
         }
     }
+    console.log("prices.includes(undefined)", prices.includes(undefined));
+    console.log("missing", missing);
+    console.log("prices", prices);
     while(prices.includes(undefined)) {
         for (let i = 0; i < missing.length; i++) {
             let j = missing[i];
@@ -31,6 +34,7 @@ process.stdin.on("end", function () {
             while(prices[stop] === undefined) {
                 stop++;
             }
+            if (start > stop) start -= n;
             let startVal = prices[start];
             let stopVal = prices[stop];
             let diff = Math.abs((stopVal - startVal) / (stop - start));
