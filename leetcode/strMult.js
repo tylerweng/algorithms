@@ -10,9 +10,9 @@ const strMult = (s1, s2) => {
             if (map[tenPwr] === undefined) map[tenPwr] = [];
             map[tenPwr].push(digit);
             if (carry !== 0) {
-                if (map[tenPwr + 1] === undefined) map[tenPwr + 1] = [];
-                map[tenPwr + 1].push(carry);
-                tenPwr++;
+                ++tenPwr;
+                if (map[tenPwr] === undefined) map[tenPwr] = [];
+                map[tenPwr].push(carry);
             }
         }
     }
