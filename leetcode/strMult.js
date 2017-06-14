@@ -22,7 +22,7 @@ const strMult = (s1, s2) => {
         let sum = map[i].reduce((x, y) => x + y) + carry;
         let digit = sum % 10;
         carry = (sum - digit) / 10;
-        resStr =  String(digit)+ resStr;
+        resStr = String(digit) + resStr;
     }
     return resStr;
 };
