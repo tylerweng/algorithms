@@ -12,6 +12,8 @@ function sumPaths(grid, i=0, j=0) {
         return sumPaths(grid, i, j+1);
     } else if (below === 1) {
         return sumPaths(grid, i+1, j);
+    } else {
+      return 0;
     }
 }
 
