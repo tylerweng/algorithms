@@ -11,7 +11,6 @@ const traverseRight = node => {
     let encounteredLevels = new Set();
     queue.push({level, node});
     while (queue.length > 0) {
-      console.log("queue", queue);
         let obj = queue.shift();
         let node = obj.node;
         level = obj.level;
