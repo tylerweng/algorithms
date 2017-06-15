@@ -59,7 +59,10 @@ const bfs = (pos, m, n, grid, explored, unseen, count) => {
 
 let grid = [
     [1, 1, 0],
-    [1, 0, 1]
+    [1, 0, 1],
+    [0, 1, 0],
+    [1, 1, 1],
+    [0, 0, 0]
 ];
 
-islandsCount(grid);
+islandsCount(grid); // 3
