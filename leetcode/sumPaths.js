@@ -13,14 +13,35 @@ function sumPaths(grid, i=0, j=0) {
     } else if (below === 1) {
         return sumPaths(grid, i+1, j);
     } else {
-      return 0;
+        return 0;
     }
 }
 
-let grid = [
+let grid1 = [
+    [1, 1],
+    [1, 0],
+    [1, 1]
+];
+
+let grid2 = [
+    [1, 1],
+    [1, 1]
+];
+
+let grid3 = [
     [1, 1],
     [1, 1],
     [1, 1]
 ];
 
-sumPaths(grid); // 3
+let grid5 = [
+    [1, 0, 1],
+    [1, 1, 1],
+    [1, 1, 1],
+    [0, 1, 1]
+];
+
+console.log(sumPaths(grid1)); // 1
+console.log(sumPaths(grid2)); // 2
+console.log(sumPaths(grid3)); // 3
+console.log(sumPaths(grid5)); // 5
