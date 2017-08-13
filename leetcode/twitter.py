@@ -1,5 +1,21 @@
 import time
 
+def insertTweets(newFolloweeTweets, feed):
+    m = len(newFolloweeTweets)
+    n = len(feed)
+    i = 0
+    j = 0
+    while i < m and j < n:
+        iTweet = newFolloweeTweets[i]
+        jTweet = feed[j]
+        if iTweet["time"] < jTweet["time"]:
+            feed.insert(j, iTweet)
+            i += 1
+            n += 1
+        else:
+            j += 1
+    feed += newFolloweeTweets[i:]
+
 class Twitter(object):
 
     def __init__(self):
@@ -103,8 +119,9 @@ class Twitter(object):
             # add followee tweets to follower feed
             followeeTweets = filter(lambda t: t["userId"] == followeeId, followee["feed"])
             followerFeed = follower["feed"]
-            followerFeed += followeeTweets
-            followerFeed.sort(key = lambda t: t["time"])
+            # followerFeed += followeeTweets
+            # followerFeed.sort(key = lambda t: t["time"])
+            insertTweets(followeeTweets, followerFeed)
 
     def unfollow(self, followerId, followeeId):
         """
