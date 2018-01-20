@@ -31,16 +31,16 @@ class Solution {
                         dp[i][j] = 0;
                     }
                 } else {
+                    // If you can use the item, take the max of this item's val plus the best val you can
+                    // make w/o using the item with the remaining weight or the previous max value
                     if (weights[i] <= j) {
                         dp[i][j] = Math.max(
                                 vals[i] + dp[i-1][j-weights[i]],
                                 dp[i][j-1]
                         );
+                    // If you can't use the item, go up a row and get the best value w/o it
                     } else {
-                        dp[i][j] = Math.max(
-                                dp[i-1][j],
-                                dp[i][j-1]
-                        );
+                        dp[i][j] = dp[i-1][j];
                     }
                 }
             }
