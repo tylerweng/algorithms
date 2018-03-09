@@ -58,7 +58,6 @@ class RatioGraph {
             double res = ratios.get(curr.name);
             if (curr.name.equals(to)) return res;
             for (RatioEdge edge : curr.edges) {
-                System.out.println(edge);
                 String next = edge.to;
                 if (!ratios.containsKey(next)) {
                     stack.add(map.get(next));
@@ -137,5 +136,7 @@ class Main {
         RatioGraph graph = new RatioGraph(ratios);
         System.out.println(graph.toString());
         System.out.println(convert(ratios, "A", "C", 2) == 3);
+        System.out.println(convert(ratios, "B", "C", 2) == 1.5);
+        System.out.println(convert(ratios, "B", "E", 3) == -1);
     }
 }
