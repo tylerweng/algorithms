@@ -1,4 +1,5 @@
 import java.util.*;
+
 class Synonym {
     public String word1;
     public String word2;
