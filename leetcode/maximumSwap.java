@@ -31,6 +31,7 @@ class Solution {
     public int maximumSwap(int num) {
         char[] digits = Integer.toString(num).toCharArray();
 
+        // buckets store furthest right idx (smallest 10 pow val) of each digit
         int[] buckets = new int[10];
         for (int i = 0; i < digits.length; i++) {
             buckets[digits[i] - '0'] = i;
