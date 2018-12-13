@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
-class Main {
+class Reservoir {
 
     /*
      * first value in given example has a 2/6 == 1/3 chance of being set to 1
